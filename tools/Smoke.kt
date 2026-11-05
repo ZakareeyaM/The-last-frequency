@@ -52,6 +52,13 @@ fun main() {
         }
     }
 
+    // menu must respond to a tap on NEW GAME right after launch
+    frame()
+    app.touch(0, 0, app.W - 120f, 92f + 38f + 12f)
+    app.touch(2, 0, app.W - 120f, 92f + 38f + 12f)
+    for (i in 0 until 40) frame()
+    if (app.screen !== app.slots) { println("FAIL: NEW GAME tap did nothing, screen=" + app.screen.javaClass.simpleName); failures++ }
+    app.go(app.menu, true)
     // menu + new game flow
     fuzz("menu", 200)
     app.newGame(0)

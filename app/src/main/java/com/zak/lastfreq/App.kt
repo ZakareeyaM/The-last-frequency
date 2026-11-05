@@ -118,6 +118,7 @@ class App(val mixer: AudioMixer, val storage: Storage, val host: Host) {
     init {
         applySettings()
         screen = menu
+        menu.enter()
     }
 
     fun applySettings() {

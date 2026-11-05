@@ -53,7 +53,7 @@ class MenuScreen(app: App) : Screen(app) {
 
     override fun update(dt: Float) {
         app.mixer.staticLevel = 0.07f
-        if (btns.isNotEmpty() && btns[0].x != app.W - 214f) layout()
+        if (btns.isEmpty() || btns[0].x != app.W - 214f) layout()
     }
 
     override fun draw(c: Canvas) {
